@@ -24,5 +24,4 @@ public/
 *.sln
 *.sw?
 
-img*
 .env
