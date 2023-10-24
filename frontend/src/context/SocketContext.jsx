@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 	const user = useRecoilValue(userAtom);
 
 	useEffect(() => {
-		const socket = io('https://interactify-app-balp.vercel.app/', {
+		const socket = io(import.meta.env.VITE_API_URL, {
 			query: {
 				userId: user?._id,
 			},

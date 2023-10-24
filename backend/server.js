@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express from 'express';
 import connectDB from './db/connectDB.js';
+import homeRoutes from './routes/homeRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
 import postRoutes from './routes/postRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -26,10 +27,9 @@ app.use(express.urlencoded({ extended: true })); // To parse form data in the re
 app.use(cookieParser());
 
 // Routes
+app.use('/', homeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/messages', messageRoutes);
 
-server.listen(PORT, () =>
-	console.log(`Server started at http://localhost:${PORT}`)
-);
+server.listen(PORT, () => console.log(`Server started at PORT ${PORT}`));
