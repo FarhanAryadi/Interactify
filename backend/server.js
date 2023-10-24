@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true })); // To parse form data in the re
 app.use(cookieParser());
 
 // Routes
-app.use('/', homeRoutes);
+app.use('/api', homeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/messages', messageRoutes);
