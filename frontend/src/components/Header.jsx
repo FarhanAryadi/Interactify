@@ -17,7 +17,7 @@ const Header = () => {
 	const setAuthScreen = useSetRecoilState(authScreenAtom);
 
 	return (
-		<Flex justifyContent={'space-between'} mt={6} mb="12">
+		<Flex alignItems={'center'} justifyContent={'space-between'} mt={6} mb="12">
 			{user && (
 				<Link as={RouterLink} to="/">
 					<AiFillHome size={24} />
