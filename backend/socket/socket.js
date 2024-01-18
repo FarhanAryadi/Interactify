@@ -1,18 +1,15 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
 import Conversation from '../models/conversationModel.js';
 import Message from '../models/messageModel.js';
-dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: [process.env.BASE_URL, 'http://localhost:3000'],
+		origin: 'http://localhost:3000',
 		methods: ['GET', 'POST'],
-		credentials: true,
 	},
 });
 
